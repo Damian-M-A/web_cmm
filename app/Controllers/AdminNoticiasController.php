@@ -96,8 +96,11 @@ class AdminNoticiasController extends BaseController
 
         return redirect()->to('admin/noticias');
     }
-    public function delete($id)
+    public function delete($id = null)
     {
+        if($id === null){
+            return redirect()->back();
+        }
         if($this->noticiasModel->delete($id))
         {
             return redirect('admin/noticias');

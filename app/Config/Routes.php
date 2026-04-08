@@ -21,5 +21,5 @@ $routes->group('admin', ['filter' => 'group:admin'], static function ($routes) {
     $routes->get('noticias', 'AdminNoticiasController::Index');
     $routes->get('noticias/nueva-noticia', 'AdminNoticiasController::New');
     $routes->post('noticias/guardar-noticia', 'AdminNoticiasController::Save');
-    $routes->post('noticias/eliminar/(:num)', 'AdminNoticiasController::Delete');
+    $routes->post('noticias/eliminar/(:num)', 'AdminNoticiasController::Delete/$1');
 });
