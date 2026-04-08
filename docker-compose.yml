@@ -1,23 +1,14 @@
 version: "3.9"
 services:
   app:
-    image: php:8.2-fpm-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
     working_dir: /var/www
     volumes:
       - ./:/var/www
     environment:
       PHP_MEMORY_LIMIT: 256M
-    command: sh -lc "
-      apk add --no-cache $PHPIZE_DEPS libpng-dev libjpeg-turbo-dev libzip-dev icu-dev oniguruma-dev libpq-dev \
-      && docker-php-ext-configure gd --with-jpeg \
-      && docker-php-ext-install pdo pdo_pgsql pgsql gd zip intl mbstring \
-      && if [ -f composer.json ]; then \
-        curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-        && composer install --no-dev --prefer-dist --no-interaction; \
-      fi \
-      && chmod -R 777 /var/www/writable \
-      && php-fpm -F
-    
 
   web:
     image: nginx:alpine
