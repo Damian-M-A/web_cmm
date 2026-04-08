@@ -46,55 +46,54 @@ class AdminNoticiasController extends BaseController
     {
         helper(['form', 'date']); 
 
-        
+        // 1. Reglas corregidas: usamos 'tipo_articulo' que es el name del HTML
         $reglas = [
-            'titulo'    => 'required|min_length[5]',
-            'texto'     => 'required',
-            'categoria' => 'required|is_not_unique[categorias.id]', 
-            'imagen'    => 'uploaded[imagen]|is_image[imagen]|max_size[imagen,2048]',
-            'archivo_pdf' => 'ext_in[archivo_pdf,pdf]|max_size[archivo_pdf,5120]',
+            'titulo'        => 'required|min_length[5]',
+            'texto'         => 'required',
+            'tipo_articulo' => 'required|is_not_unique[categorias.id]', 
+            'imagen'        => 'uploaded[imagen]|is_image[imagen]|max_size[imagen,2048]',
+            'archivo_pdf'   => 'ext_in[archivo_pdf,pdf]|max_size[archivo_pdf,5120]',
         ];
 
         if (!$this->validate($reglas)) {
+            // Esto devuelve al usuario con los errores y lo que ya escribió
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        // 2. Captura de archivos y datos
         $imagen = $this->request->getFile('imagen');
         $pdf    = $this->request->getFile('archivo_pdf');
-        
-        // Simplificamos la captura del POST
         $postData = $this->request->getPost();
         
-       
         $nombre_imagen = null;
         $nombre_pdf    = null;
 
-        
+        // Subida de Imagen
         if ($imagen && $imagen->isValid() && !$imagen->hasMoved()) {
             $nombre_imagen = $imagen->getRandomName();
+            // Asegúrate de que la carpeta 'img' exista en /public/
             $imagen->move(FCPATH . 'img', $nombre_imagen);
         }
 
-        // 4. Procesar PDF (Opcional)
+        // Subida de PDF
         if ($pdf && $pdf->isValid() && !$pdf->hasMoved()) {
             $nombre_pdf = $pdf->getRandomName();
+            // Asegúrate de que la carpeta 'files' exista en /public/
             $pdf->move(FCPATH . 'files', $nombre_pdf);
         }
 
-        // 5. Inserción en la base de datos
+        // 5. Inserción
         $this->noticiasModel->insert([
             'titulo'       => $postData['titulo'],
             'contenido'    => $postData['texto'],
-            'id_categoria' => $postData['categoria'], 
+            'id_categoria' => $postData['tipo_articulo'], // Nombre corregido
             'subido_por'   => auth()->id(),           
             'subido_el'    => date('Y-m-d H:i:s'),    
             'activo'       => true,                      
-            'estado'       => 'otro',
+            'estado'       => 'publicado', // 'otro' es ambiguo, mejor 'publicado'
             'imagen'       => $nombre_imagen,
             'adjunto'      => $nombre_pdf
         ]);
 
-        return redirect()->to('admin/noticias');
+        return redirect()->to('admin/noticias')->with('message', 'Noticia creada con éxito');
     }
 }
