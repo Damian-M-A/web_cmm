@@ -4,8 +4,8 @@
     .pagination-container ul.pagination {
         gap: 8px;
         border: none;
-        padding-left: 0; /* Asegura que no tenga padding extra en móvil */
-        flex-wrap: wrap; /* Permite que los números bajen si no caben */
+        padding-left: 0; 
+        flex-wrap: wrap; 
         justify-content: center;
     }
 
@@ -18,7 +18,7 @@
         border-radius: 8px !important;
         border: 1px solid rgba(0,0,0,0.05);
         color: var(--cmm-deep);
-        padding: 8px 14px; /* Un poco menos de padding para móvil */
+        padding: 8px 14px; 
         transition: all 0.3s ease;
         background: rgba(255, 255, 255, 0.7);
         text-decoration: none;
@@ -31,7 +31,7 @@
         border-color: var(--cmm-deep) !important;
     }
 
-    /* Ajuste para móviles muy pequeños */
+    
     @media (max-width: 576px) {
         .pagination-container li.page-item a, 
         .pagination-container li.page-item span {
@@ -49,7 +49,7 @@
                 <div class="col-sm-6 col-md-4"> <div class="card-glass h-100 shadow-sm">
                         <img class="card-img-top" src="<?= !empty($proyecto['imagen']) ? base_url(['img', $proyecto['imagen']]) : base_url('img/generica.jpg') ?>" alt="sin_imagen" style="height: 200px; object-fit: cover;">
                         <div class="card-body p-4">
-                            <h5 class="card-title fw-bold" style="color: var(--cmm-deep);"><?= esc($proyecto['titulo']) ?></h5>
+                            <h5 class="card-title fw-bold" style="color: var(--cmm-title);"><?= esc($proyecto['titulo']) ?></h5>
                             <p class="card-text text-muted"><?= word_limiter(strip_tags($proyecto['contenido']), 20) ?></p>
                             <a href="<?= base_url('proyectos/'.$proyecto['id']) ?>" class="badge-accent text-decoration-none">
                                 <i class="bi bi-arrow-right-short"></i> Ver más

@@ -2,7 +2,7 @@
 
 <style>
     .project-container {
-        max-width: 800px; /* Limitar el ancho mejora la lectura */
+        max-width: 800px; 
         margin: 0 auto;
     }
     .img-detail {
@@ -18,19 +18,19 @@
         line-height: 1.8;
         color: #333;
     }
-    /* Estilo para los elementos que vienen de la base de datos */
+    
     .project-content p { margin-bottom: 1.5rem; }
     .project-content h2, .project-content h3 { 
         color: var(--cmm-deep); 
         margin-top: 2rem;
     }
     .meta-info {
-        border-left: 3px solid var(--cmm-deep);
+        border-left: 3px solid #0084AD;
         padding-left: 1rem;
         color: #666;
     }
     .btn-download {
-        background-color: var(--cmm-deep);
+        background-color: #0084AD;
         color: white;
         padding: 10px 20px;
         border-radius: 50px;
@@ -49,7 +49,7 @@
     <article class="project-container">
         
         <header class="mb-4">
-            <h1 class="display-5 fw-bold" style="color: var(--cmm-deep);"><?= esc($transparencia['titulo']) ?></h1>
+            <h1 class="display-5 fw-bold" style="color: var(--cmm-title);"><?= esc($transparencia['titulo']) ?></h1>
             <div class="meta-info mt-3">
                 <small class="d-block">
                     <i class="bi bi-calendar3"></i> Publicado el: <?= date('d/m/Y', strtotime($transparencia['subido_el'])) ?>

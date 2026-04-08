@@ -67,7 +67,7 @@ echo view('layout/header');
                 <div class="card-glass h-100">
                     <img class="card-img-top" src="<?= base_url(['img',$noticia['imagen']]) ?>" alt="sin_imagen">
                      <div class="card-body p-4">
-                        <h5 class="card-title fw-bold" style="color: var(--cmm-deep);"><?=$noticia['titulo'] ?></h5>
+                        <h5 class="card-title fw-bold" style="color: var(--cmm-title);"><?=$noticia['titulo'] ?></h5>
                         <p class="card-text"><?= word_limiter($noticia['contenido'], 20) ?></p>
                         <a href="<?= base_url('noticias/'.$noticia['id']) ?>" class="badge-accent">
                             <i class="bi bi-arrow-right-short"></i> Ver más

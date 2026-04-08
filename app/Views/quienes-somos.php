@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-md-6 ps-md-5">
                     
-                    <h2 class="display-5 fw-bold mb-4">Sobre Nosotros</h2>
+                    <h2 class="display-5 fw-bold mb-4" style="color: var(--cmm-primary);">Sobre Nosotros</h2>
                     <div class="text-muted lh-lg">
                         <p style="text-align: justify;"><?= $Quienes['texto']; ?></p>
                         
@@ -24,13 +24,13 @@
         </div>
     </section>
 
-    <section class="py-5 bg-light">
+    <section class="py-5">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="card-glass h-100 p-4 border-0 shadow-sm">
                         <div class="d-flex align-items-center mb-3">
-                            <h3 class="fw-bold m-0">Nuestra Misión</h3>
+                            <h3 class="fw-bold m-0" style="color: var(--cmm-primary);">Nuestra Misión</h3>
                         </div>
                         <div class="text-muted lh-lg">
                             <p style="text-align: justify;"><?= $mision['texto']; ?></p> 
@@ -42,7 +42,7 @@
                     <div class="card-glass h-100 p-4 border-0 shadow-sm">
                         <div class="d-flex align-items-center mb-3">
 
-                            <h3 class="fw-bold m-0">Nuestra Visión</h3>
+                            <h3 class="fw-bold m-0" style="color: var(--cmm-primary);">Nuestra Visión</h3>
                         </div>
                         <div class="text-muted lh-lg">
                             <p style="text-align: justify;"> <?= $vision['texto']; ?></p>

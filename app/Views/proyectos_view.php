@@ -30,7 +30,7 @@
         color: #666;
     }
     .btn-download {
-        background-color: var(--cmm-deep);
+        background-color: #0084AD;
         color: white;
         padding: 10px 20px;
         border-radius: 50px;
@@ -49,7 +49,7 @@
     <article class="project-container">
         
         <header class="mb-4">
-            <h1 class="display-5 fw-bold" style="color: var(--cmm-deep);"><?= esc($proyecto['titulo']) ?></h1>
+            <h1 class="display-5 fw-bold" style="color: var(--cmm-title);"><?= esc($proyecto['titulo']) ?></h1>
             <div class="meta-info mt-3">
                 <small class="d-block">
                     <i class="bi bi-calendar3"></i> Publicado el: <?= date('d/m/Y', strtotime($proyecto['subido_el'])) ?>

@@ -25,7 +25,7 @@
                         <img class="card-img-top" src="<?= !empty($trans['imagen']) ? base_url(['img', $trans['imagen']]) : base_url('img/generica.jpg') ?>" alt="transparencia">
                         
                         <div class="card-body p-4">
-                            <h5 class="card-title fw-bold" style="color: var(--cmm-deep);"><?= esc($trans['titulo']) ?></h5>
+                            <h5 class="card-title fw-bold" style="color: var(--cmm-title);"><?= esc($trans['titulo']) ?></h5>
                             
                             <p class="card-text text-muted">
                                 <?= word_limiter(strip_tags($trans['contenido']), 20) ?>

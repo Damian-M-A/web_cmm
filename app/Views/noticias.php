@@ -48,7 +48,7 @@
                     <div class="card-glass h-100 shadow-sm">
                         <img class="card-img-top" src="<?= !empty($noticia['imagen']) ? base_url(['img', $noticia['imagen']]) : base_url('img/generica.jpg') ?>" alt="noticia">
                         <div class="card-body p-4">
-                            <h5 class="card-title fw-bold" style="color: var(--cmm-deep);"><?= esc($noticia['titulo']) ?></h5>
+                            <h5 class="card-title fw-bold" style="color: var(--cmm-title);"><?= esc($noticia['titulo']) ?></h5>
                             <p class="card-text text-muted"><?= word_limiter(strip_tags($noticia['contenido']), 20) ?></p>
                             <a href="<?= base_url('noticias/'.$noticia['id']) ?>" class="badge-accent text-decoration-none">
                                 <i class="bi bi-arrow-right-short"></i> Ver más

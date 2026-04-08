@@ -1,2 +1,7 @@
-User-agent: *
-Disallow: 
+User-agent: Googlebot
+Allow: /*
+crawl-delay: 3
+
+User-agent:*
+Allow:/*
+Sitemap:https://cmmolina.cl/sitemap.xml
