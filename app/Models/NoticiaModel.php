@@ -19,7 +19,8 @@ class NoticiaModel extends Model
         'id_categoria', 
         'contenido', 
         'imagen', 
-        'subido_por', 
+        'subido_por',
+        'subido_el',
         'estado',     // Tipo ENUM
         'activo', 
         'adjunto'

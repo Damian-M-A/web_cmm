@@ -16,6 +16,8 @@ $routes->get('transparencia/', 'TransparenciaController::Index');
 $routes->get('transparencia/(:num)', 'TransparenciaController::view/$1');
 
 service('auth')->routes($routes);
-$routes->get('admin/dashboard/', 'DashboardController::Index');
-$routes->get('admin/noticias/', 'AdminNoticiasController::Index');
-$routes->get('admin/noticias/nueva-noticia', 'AdminNoticiasController::New');
+$routes->group('admin', ['filter' => 'group:admin'], static function ($routes) {
+    $routes->get('dashboard', 'DashboardController::Index');
+    $routes->get('noticias', 'AdminNoticiasController::Index');
+    $routes->get('noticias/nueva-noticia', 'AdminNoticiasController::New');
+});

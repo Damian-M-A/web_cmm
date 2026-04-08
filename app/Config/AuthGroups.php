@@ -94,6 +94,14 @@ class AuthGroups extends ShieldAuthGroups
             'admin.*',
             'users.*',
             'beta.*',
+            'noticias.*',
+            'categorias.*',
+            'colaboradores.*',
+            'sliders.*',
+            'cargos.*',
+            'area.*',
+            'info_cmm.*',
+
         ],
         'admin' => [
             'admin.access',
@@ -101,6 +109,13 @@ class AuthGroups extends ShieldAuthGroups
             'users.edit',
             'users.delete',
             'beta.access',
+            'noticias.*',
+            'categorias.*',
+            'colaboradores.*',
+            'sliders.*',
+            'cargos.*',
+            'area.*',
+            'info_cmm.*',
         ],
         'developer' => [
             'admin.access',
