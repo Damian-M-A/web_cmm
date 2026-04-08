@@ -71,14 +71,14 @@ class AdminNoticiasController extends BaseController
         if ($imagen && $imagen->isValid() && !$imagen->hasMoved()) {
             $nombre_imagen = $imagen->getRandomName();
             // Asegúrate de que la carpeta 'img' exista en /public/
-            $imagen->move(FCPATH . 'img', $nombre_imagen);
+            $imagen->move('./img', $nombre_imagen);
         }
 
         // Subida de PDF
         if ($pdf && $pdf->isValid() && !$pdf->hasMoved()) {
             $nombre_pdf = $pdf->getRandomName();
             // Asegúrate de que la carpeta 'files' exista en /public/
-            $pdf->move(FCPATH . 'files', $nombre_pdf);
+            $pdf->move('./files', $nombre_pdf);
         }
 
         // 5. Inserción
