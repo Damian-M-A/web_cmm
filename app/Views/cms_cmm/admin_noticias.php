@@ -38,7 +38,7 @@
                                 <td style="text-align: center;"><?= date('d/m/Y', strtotime($noticia['subido_el'])) ?></td>
                                 <td class="text-end pe-4">
                                     <div class="d-flex justify-content-end align-items-center gap-2">
-                                        <a href="" class="btn btn-sm btn-outline-primary">
+                                        <a href="<?= base_url('admin/noticias/actualizar-noticia/'.  $noticia['id']) ?>" class="btn btn-sm btn-outline-primary">
                                             <i class="bi bi-pencil"></i>
                                         </a>
                                         <form action="<?= base_url('admin/noticias/eliminar/'.$noticia['id']) ?>" method="POST" 

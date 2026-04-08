@@ -5,18 +5,17 @@
         <div class="footer-logo-symbol">
           <img src="<?= base_url('img/marca.png') ?>" alt="Logo CMM" style="max-width: 100%; height: auto;">
         </div>
-        <p class="mt-2">Nuestra misión es desarrollar capacidades para enfrentar los problemas de la contaminación del aire y el cambio climático en Latinoamérica.</p>
+        <p class="mt-2" style="text-align: justify;">Nuestra misión es desarrollar capacidades para enfrentar los problemas de la contaminación del aire y el cambio climático en Latinoamérica.</p>
         <div class="mt-3 d-flex gap-3">
-          <i class="bi bi-geo-alt-fill text-accent"></i> <span>Antonio Bellet 292 int. 602 - Providencia, Santiago de Chile.</span>
+          <i class="bi bi-geo-alt-fill text-accent"></i> <span>Avenida El Alfalfal 471,Bodega 229 ,Lampa, Región Metropolitana, Chile</span>
         </div>
       </div>
       <div class="col-md-3 col-sm-6"></div>
       <div class="col-md-3 col-sm-6"></div>
       <div class="col-md-3 col-sm-6 py-4">
         <h6 class="heading7">Contacto</h6>
-        <p><i class="bi bi-telephone-fill me-2 text-accent"></i> numero</p>
-        <p><i class="bi bi-envelope-fill me-2 text-accent"></i>  correo</p>
-        <p><i class="bi bi-clock-fill me-2 text-accent"></i> atencion</p>
+        <p><i class="bi bi-envelope-fill me-2 text-accent"></i>cmmolina@cmmolina.cl</p>
+        <p><i class="bi bi-clock-fill me-2 text-accent"></i>Lun - Vie | 08:00 - 17:00</p>
         <div class="mt-3 d-flex gap-3">
             <a href="https://www.instagram.com/centromariomolina.cl/" class="text-white-50" target="_blank" rel="noopener noreferrer">
                 <i class="bi bi-instagram fs-5"></i>
