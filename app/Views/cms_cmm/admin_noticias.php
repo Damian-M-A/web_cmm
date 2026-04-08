@@ -1,8 +1,11 @@
 <?= view('cms_cmm/layout/header.php') ?>
 <main role="main">
-    
     <div class="container mt-5">
-        <a class="btn btn-primary py-3 " href="<?=base_url('admin/noticias/nueva-noticia')?>">Añadir nueva noticia</a>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <a class="btn btn-primary shadow-sm" href="<?=base_url('admin/noticias/nueva-noticia')?>">
+                <i class="bi bi-plus-lg me-1"></i> Añadir nueva noticia
+            </a>
+        </div>
         <div class="card shadow-sm border-0">
             <div class="card-header bg-white py-3">
                 <h5 class="mb-0 fw-bold text-dark">Lista de Noticias</h5>

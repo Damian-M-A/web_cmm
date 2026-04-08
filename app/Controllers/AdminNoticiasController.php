@@ -106,4 +106,16 @@ class AdminNoticiasController extends BaseController
             return redirect('admin/noticias');
         }
     }
+    public function edit($id = null)
+    {
+        $id = (int)$id;
+        if($id === null)
+        {
+            return redirect()->back();
+        }
+        $noticias = $this->noticiasModel->find($id);
+        $categorias = $this->categoriasModel->findAll();
+        $data = ['title'=> 'editando - '.$noticias['title'], 'noticias' =>$noticias, 'categorias'=>$categorias];
+        return view('cms_cmm/editar-noticia', $data);
+    }
 }
