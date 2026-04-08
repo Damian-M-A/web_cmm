@@ -52,7 +52,7 @@ class AdminNoticiasController extends BaseController
             'texto'         => 'required',
             'tipo_articulo' => 'required|is_not_unique[categorias.id]', 
             'imagen'        => 'uploaded[imagen]|is_image[imagen]|max_size[imagen,2048]',
-            'archivo_pdf'   => 'ext_in[archivo_pdf,pdf]|max_size[archivo_pdf,5120]',
+            'archivo_pdf' => 'permit_empty|ext_in[archivo_pdf,pdf]|max_size[archivo_pdf,10240]',
         ];
 
         if (!$this->validate($reglas)) {
