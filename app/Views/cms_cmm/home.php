@@ -25,7 +25,7 @@
                     <div class="card h-100 text-center shadow-sm border-0">
                         <img src="<?= base_url('img/articulo.jpg')?>" class="card-img-top" alt="Artículos">
                         <div class="card-body d-grid">
-                            <button type="button" class="btn btn-outline-info btn-sm fw-bold">Ver Noticias</button>
+                            <a href="<?= base_url('admin/noticias') ?>" type="button" class="btn btn-outline-info btn-sm fw-bold">Ver Noticias</a>
                         </div>
                     </div>
                 </div>

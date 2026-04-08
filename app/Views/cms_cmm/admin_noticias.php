@@ -1,7 +1,8 @@
 <?= view('cms_cmm/layout/header.php') ?>
 <main role="main">
-    <a class="btn btn-primary" href="<?=base_url('admin/noticias/nueva-noticia')?>">Añadir nueva noticia</a>
+    
     <div class="container mt-5">
+        <a class="btn btn-primary" href="<?=base_url('admin/noticias/nueva-noticia')?>">Añadir nueva noticia</a>
         <div class="card shadow-sm border-0">
             <div class="card-header bg-white py-3">
                 <h5 class="mb-0 fw-bold text-dark">Lista de Noticias</h5>
@@ -33,8 +34,10 @@
                                 <?php endif; ?>
                                 <td style="text-align: center;"><?= date('d/m/Y', strtotime($noticia['subido_el'])) ?></td>
                                 <td class="text-end pe-4">
-                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-                                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                    <a href="" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></a>
+                                    <form action="<?= base_url('admin/noticias/eliminar/'.$noticia['id']) ?>" method="POST" onsubmit="return confirm('¿Estás seguro de eliminar esta noticia?')">
+                                        <button type="submit" class="btn btn-danger"><i  class="bi bi-trash"></i></button>
+                                    </form>
                                 </td>
                             </tr>
                         </tbody>

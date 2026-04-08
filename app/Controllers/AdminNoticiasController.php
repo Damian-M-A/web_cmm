@@ -94,6 +94,13 @@ class AdminNoticiasController extends BaseController
             'adjunto'      => $nombre_pdf
         ]);
 
-        return redirect()->to('admin/noticias')->with('message', 'Noticia creada con éxito');
+        return redirect()->to('admin/noticias');
+    }
+    public function delete($id)
+    {
+        if($this->noticiasModel->delete($id))
+        {
+            return redirect('admin/noticias');
+        }
     }
 }
