@@ -77,19 +77,19 @@ class AdminNoticiasController extends BaseController
         // Subida de PDF
         if ($pdf && $pdf->isValid() && !$pdf->hasMoved()) {
             $nombre_pdf = $pdf->getRandomName();
-            // Asegúrate de que la carpeta 'files' exista en /public/
-            $pdf->move('./files', $nombre_pdf);
+            
+            $pdf->move('files', $nombre_pdf);
         }
 
         // 5. Inserción
         $this->noticiasModel->insert([
             'titulo'       => $postData['titulo'],
             'contenido'    => $postData['texto'],
-            'id_categoria' => $postData['tipo_articulo'], // Nombre corregido
+            'id_categoria' => $postData['tipo_articulo'], 
             'subido_por'   => auth()->id(),           
             'subido_el'    => date('Y-m-d H:i:s'),    
             'activo'       => true,                      
-            'estado'       => 'publicado', // 'otro' es ambiguo, mejor 'publicado'
+            'estado'       => 'publicado', 
             'imagen'       => $nombre_imagen,
             'adjunto'      => $nombre_pdf
         ]);
