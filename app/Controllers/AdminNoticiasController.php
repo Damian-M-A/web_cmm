@@ -50,7 +50,7 @@ class AdminNoticiasController extends BaseController
         $reglas = [
             'titulo'        => 'required|min_length[5]',
             'texto'         => 'required',
-            'tipo_articulo' => 'required|is_not_unique[categoria.id]', 
+            'tipo_articulo' => 'required|is_not_unique[categorias.id]', 
             'imagen'        => 'uploaded[imagen]|is_image[imagen]|max_size[imagen,2048]',
             'archivo_pdf'   => 'ext_in[archivo_pdf,pdf]|max_size[archivo_pdf,5120]',
         ];
