@@ -18,9 +18,9 @@
                                 <label for="tipo_articulo" class="form-label small fw-bold text-uppercase text-muted">Tipo de Artículo</label>
                                 <select class="form-select border-2" id="tipo_articulo" name="tipo_articulo">
                                     <option selected disabled>Seleccionar...</option>
-                                    <option value="noticia">Noticia</option>
-                                    <option value="publicacion">Publicación Científica</option>
-                                    <option value="proyecto">Proyecto</option>
+                                    <?php foreach ($categorias as $categoria):?>
+                                    <option value="<?= $categoria['id'] ?>"><?= $categoria['nombre'] ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             
                         </div>

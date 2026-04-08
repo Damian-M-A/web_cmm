@@ -1,5 +1,6 @@
 <?= view('cms_cmm/layout/header.php') ?>
 <main role="main">
+    <a class="btn btn-primary" href="<?=base_url('admin/noticias/nueva-noticia')?>">Añadir nueva noticia</a>
     <div class="container mt-5">
         <div class="card shadow-sm border-0">
             <div class="card-header bg-white py-3">

@@ -1,16 +1,19 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\CategoriaModel;
 use App\Models\NoticiaModel;
 
 
 class AdminNoticiasController extends BaseController
 {
     protected $noticiasModel;
+    protected $categoriasModel;
 
     public function __construct()
     {
-        $this->noticiasModel = new NoticiaModel();  
+        $this->noticiasModel = new NoticiaModel();
+        $this->categoriasModel = new CategoriaModel();  
     }
 
     public function index()
@@ -34,7 +37,8 @@ class AdminNoticiasController extends BaseController
         }
 
         helper(['auth', 'text']);
-        $data = ['title'=> 'Nueva Noticia'];
+        $categorias = $this->categoriasModel->findAll();
+        $data = ['title'=> 'Nueva Noticia', 'categorias' => $categorias];
         return view( 'cms_cmm/noticias_form', $data);
 
     }
