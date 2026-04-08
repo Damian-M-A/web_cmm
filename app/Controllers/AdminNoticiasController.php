@@ -89,7 +89,7 @@ class AdminNoticiasController extends BaseController
             'subido_por'   => auth()->id(),           
             'subido_el'    => date('Y-m-d H:i:s'),    
             'activo'       => true,                      
-            'estado'       => 'publicado', 
+            'estado'       => 'otro', 
             'imagen'       => $nombre_imagen,
             'adjunto'      => $nombre_pdf
         ]);
