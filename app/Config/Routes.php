@@ -20,4 +20,5 @@ $routes->group('admin', ['filter' => 'group:admin'], static function ($routes) {
     $routes->get('dashboard', 'DashboardController::Index');
     $routes->get('noticias', 'AdminNoticiasController::Index');
     $routes->get('noticias/nueva-noticia', 'AdminNoticiasController::New');
+    $routes->post('noticias/guardar-noticia', 'AdminNoticiasController::Save');
 });

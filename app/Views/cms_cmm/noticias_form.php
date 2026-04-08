@@ -10,7 +10,7 @@
                 </div>
                 
                 <div class="card-body p-4">
-                    <form action="<?= base_url('admin/guardar_noticia') ?>" method="POST" enctype="multipart/form-data">
+                    <form action="<?= base_url('admin/noticias/guardar-noticia') ?>" method="POST" enctype="multipart/form-data">
                         <?= csrf_field() ?>
 
                         <div class="row mb-2">
