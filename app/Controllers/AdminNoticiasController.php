@@ -71,7 +71,7 @@ class AdminNoticiasController extends BaseController
         if ($imagen && $imagen->isValid() && !$imagen->hasMoved()) {
             $nombre_imagen = $imagen->getRandomName();
             // Asegúrate de que la carpeta 'img' exista en /public/
-            $imagen->move('./img', $nombre_imagen);
+            $imagen->move('img', $nombre_imagen);
         }
 
         // Subida de PDF
