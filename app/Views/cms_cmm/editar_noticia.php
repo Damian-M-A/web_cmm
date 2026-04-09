@@ -17,12 +17,12 @@
             <div class="card shadow-sm border-0">
                 <div class="card-header bg-white py-3 border-bottom">
                     <h5 class="mb-0 fw-bold text-primary">
-                        <i class="bi bi-pencil-square me-2"></i>Editar: <?= esc($noticia['titulo']) ?>
+                        <i class="bi bi-pencil-square me-2"></i>Editar: <?= esc($noticias['titulo']) ?>
                     </h5>
                 </div>
                 
                 <div class="card-body p-4">
-                    <?= form_open_multipart('admin/noticias/actualizar/' . $noticia['id']) ?>
+                    <?= form_open_multipart('admin/noticias/actualizar/' . $noticias['id']) ?>
                         
                         <div class="row mb-2">
                             <label for="tipo_articulo" class="form-label small fw-bold text-uppercase text-muted">Tipo de Artículo</label>
