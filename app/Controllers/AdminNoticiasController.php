@@ -116,6 +116,6 @@ class AdminNoticiasController extends BaseController
         $noticias = $this->noticiasModel->find($id);
         $categorias = $this->categoriasModel->findAll();
         $data = ['title'=> 'Editando noticia', 'noticias' =>$noticias, 'categorias'=>$categorias];
-        return view('cms_cmm/editar_noticias', $data);
+        return view('cms_cmm/editar_noticia', $data);
     }
 }
