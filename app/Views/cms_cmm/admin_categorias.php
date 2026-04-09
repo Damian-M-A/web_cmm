@@ -5,7 +5,7 @@
             <a class="btn btn-secondary shadow-sm" href="<?= base_url('admin/noticias') ?>">
                 <i class = "bi bi-skip-backward-fill"></i>Volver
             </a>
-            <a class="btn btn-primary shadow-sm" href="<?=base_url('')?>">
+            <a class="btn btn-primary shadow-sm" href="<?=base_url('admin/categorias/nueva-categoria')?>">
                 <i class="bi bi-plus-lg me-1"></i> Añadir nueva categoria
             </a>
         </div>

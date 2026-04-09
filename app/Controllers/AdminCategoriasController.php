@@ -18,6 +18,7 @@ class AdminCategoriasController extends BaseController
     }
     public function new()
     {
-        return view('cms_cmm/nueva_categoria');
+        $data = ['title'=> 'Añadiendo nueva categoria'];
+        return view('cms_cmm/nueva_categoria', $data);
     }
 }

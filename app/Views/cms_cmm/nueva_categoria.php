@@ -18,7 +18,7 @@
                 </div>
                 
                 <div class="card-body p-4">
-                    <?php echo form_open('guardar-categoria');?>
+                    <?php echo form_open('');?>
                     <p>
                         <?php echo form_label('Nombre','nombre');?>
                         <?php echo form_input('nombre','',['id'=>'nombre']);?>
