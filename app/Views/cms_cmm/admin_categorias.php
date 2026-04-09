@@ -3,7 +3,7 @@
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-2">
             <a class="btn btn-secondary shadow-sm" href="<?= base_url('admin/noticias') ?>">
-                <i class = "bi bi-skip-backward-fill"></i>Volver
+                <i class = "bi bi-skip-backward-fill"></i> Volver
             </a>
             <a class="btn btn-primary shadow-sm" href="<?=base_url('admin/categorias/nueva-categoria')?>">
                 <i class="bi bi-plus-lg me-1"></i> Añadir nueva categoria
