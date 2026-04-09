@@ -2,9 +2,16 @@
 <main role="main">
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
+            <a class="btn btn-secondary shadow-sm" href="<?= base_url('admin/dashboard') ?>">
+                <i class = "bi bi-skip-backward-fill"></i>Volver
+            </a>
             <a class="btn btn-primary shadow-sm" href="<?=base_url('admin/noticias/nueva-noticia')?>">
                 <i class="bi bi-plus-lg me-1"></i> Añadir nueva noticia
             </a>
+            <a class="btn btn-info shadow-sm" href="<?=base_url('admin/categorias')?>">
+                <i class="bi bi-bookmark-fill"></i> Ver categorias
+            </a>
+
         </div>
         <div class="card shadow-sm border-0">
             <div class="card-header bg-white py-3">

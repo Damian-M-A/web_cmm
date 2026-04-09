@@ -18,10 +18,13 @@ $routes->get('transparencia/(:num)', 'TransparenciaController::view/$1');
 service('auth')->routes($routes);
 $routes->group('admin', ['filter' => 'group:admin'], static function ($routes) {
     $routes->get('dashboard', 'DashboardController::Index');
+    // noticias
     $routes->get('noticias', 'AdminNoticiasController::Index');
     $routes->get('noticias/nueva-noticia', 'AdminNoticiasController::New');
     $routes->post('noticias/guardar-noticia', 'AdminNoticiasController::Save');
     $routes->post('noticias/eliminar/(:num)', 'AdminNoticiasController::Delete/$1');
     $routes->get('noticias/actualizar-noticia/(:num)', 'AdminNoticiasController::Edit/$1');
     $routes->post('noticias/guardar-cambios/(:num)', 'AdminNoticiasController::Update/$1');
+    // categorias
+    $routes->get('categorias', 'AdminCategoriasController::Index');
 });
