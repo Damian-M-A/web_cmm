@@ -17,12 +17,12 @@
             <div class="card shadow-sm border-0">
                 <div class="card-header bg-white py-3 border-bottom">
                     <h5 class="mb-0 fw-bold text-primary">
-                        <i class="bi bi-plus-circle me-2"></i>Crear Nueva Categoría
+                        <i class="bi bi-plus-circle me-2"></i>Actualizar Categoría
                     </h5>
                 </div>
                 
                 <div class="card-body p-4">
-                    <?= form_open('admin/categorias/guardar'); ?>
+                    <?= form_open('admin/categorias/actualizar'.$categoria['id']); ?>
                         
                         <div class="mb-4">
                             <label for="nombre" class="form-label small fw-bold text-uppercase text-muted">Nombre de la Categoría</label>
@@ -30,9 +30,9 @@
                                    name="nombre" 
                                    id="nombre" 
                                    class="form-control form-control-lg border-2"
-                                   value="<?= set_value('nombre') ?>" 
+                                   value="<?= $categoria['nombre'] ?>" 
                                    required>
-                            
+            
                         </div>
 
                         <div class="d-flex justify-content-end gap-2 border-top pt-4">

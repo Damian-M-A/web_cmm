@@ -35,9 +35,43 @@ class AdminCategoriasController extends BaseController
         $this->categoriasModel->insert
         (
           [
-            'nombre'=> $data['nombre']
+            'nombre'=> $data
           ]  
         );
         return redirect()->to('admin/categorias');
+    }
+    public function edit($id = null)
+    {
+        if($id === null)
+        {
+            return redirect()->back();
+        }
+        $categoria = $this->categoriasModel->find($id);
+        $data = ['title'=> 'Actualizando categoria', 'categorias'=> $categoria];
+        return view('cms_cmm/actualizar_categoria', $data);
+
+
+    }
+    public function update($id = null)
+    {
+        helper('form');
+
+        if($id === null)
+        {
+            return redirect()->to('admin/categorias');
+        }
+        $reglas = [
+            'nombre' => 'required|is_unique[categorias.nombre]'
+        ];
+        if(!$this->validate($reglas))
+        {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        $data = $this->request->getPost('nombre');
+
+        $this->categoriasModel->update($id,$data);
+        return redirect()->to('admin/categorias');
+        
+
     }
 }
