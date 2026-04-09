@@ -67,9 +67,9 @@ class AdminCategoriasController extends BaseController
         {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
-        $data = $this->request->getPost('nombre');
+        $categoria = $this->request->getPost('nombre');
 
-        $this->categoriasModel->update($id,$data);
+        $this->categoriasModel->update($id,['categoria'=> $categoria]);
         return redirect()->to('admin/categorias');
         
 
