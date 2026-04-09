@@ -123,7 +123,7 @@ echo view('layout/header');
                     <img src="<?= base_url(['img',  $pa['imagen']]); ?>" class="partner-img img-fluid" alt="sin_imagen">
                 </a>
             <?php else: ?>
-                <img src="<?= base_url(['img', 'img_anteriores', $pa['imagen']]); ?>" class="partner-img img-fluid" alt="sin_imagen">
+                <img src="<?= base_url(['img', $pa['imagen']]); ?>" class="partner-img img-fluid" alt="sin_imagen">
             <?php endif; ?>
         </div>
         <?php endforeach; ?>
