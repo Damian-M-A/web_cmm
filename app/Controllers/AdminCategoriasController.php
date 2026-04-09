@@ -21,4 +21,23 @@ class AdminCategoriasController extends BaseController
         $data = ['title'=> 'Añadiendo nueva categoria'];
         return view('cms_cmm/nueva_categoria', $data);
     }
+    public function save()
+    {
+        helper('form');
+        $reglas = [
+            'nombre' => 'required|is_unique[categorias.nombre]'
+        ];
+        if(!$this->validate($reglas))
+        {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        $data = $this->request->getPost('nombre');
+        $this->categoriasModel->insert
+        (
+          [
+            'nombre'=> $data['nombre']
+          ]  
+        );
+        return redirect()->to('admin/categorias');
+    }
 }

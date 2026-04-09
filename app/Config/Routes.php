@@ -28,4 +28,5 @@ $routes->group('admin', ['filter' => 'group:admin'], static function ($routes) {
     // categorias
     $routes->get('categorias', 'AdminCategoriasController::Index');
     $routes->get('categorias/nueva-categoria', 'AdminCategoriasController::New');
+    $routes->post('categorias/guardar', 'AdminCategoriasController::Save');
 });

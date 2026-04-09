@@ -12,7 +12,7 @@
         </div>
     <?php endif ?>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center d-flex">
         <div class="col-lg-8"> 
             <div class="card shadow-sm border-0">
                 <div class="card-header bg-white py-3 border-bottom">

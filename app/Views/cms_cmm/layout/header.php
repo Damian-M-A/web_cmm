@@ -10,14 +10,11 @@
     <link rel="stylesheet" href="<?= base_url('css/styles.css') ?>">
     
     <style>
-        /* Flexbox para empujar el footer */
         body {
             background-color: #f4f7f6;
             display: flex;
             flex-direction: column;
         }
-
-        /* El main ocupará todo el espacio disponible */
         main {
             flex-shrink: 0;
             flex-grow: 1;
@@ -35,7 +32,7 @@
 </head>
 <body class="h-100"> <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="<?= base_url('admin/dashboard') ?>">
             <img src="<?= base_url('img/logo_cmm.png') ?>" alt="Logo CMM"> 
         </a>
 
