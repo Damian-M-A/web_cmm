@@ -83,7 +83,7 @@ echo view('layout/header');
                 <?php foreach($noticias as $key => $noticia): ?>
                     <div class="carousel-item <?= ($key === 0) ? 'active' : '' ?>">
                         <div class="card-glass">
-                            <img class="card-img-top" src="<?= base_url(['img', 'img_anteriores', $noticia['imagen']]) ?>" alt="sin_imagen">
+                            <img class="card-img-top" src="<?= base_url(['img', $noticia['imagen']]) ?>" alt="sin_imagen">
                             <div class="card-body p-4">
                                 <h5 class="card-title fw-bold" style="color: var(--cmm-deep);"><?= $noticia['titulo'] ?></h5>
                                 <p class="card-text"><?= word_limiter(strip_tags($noticia['contenido']), 20) ?></p>
