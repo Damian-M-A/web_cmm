@@ -30,7 +30,7 @@
                                 <td style="text-align: center;"> <?= $categoria['id'] ?></td>
                                 <td style="text-align: justify;"> <?= $categoria['nombre']?></td>
                                 <td class="text-end pe-4">
-                                    <a href="<?= base_url('admin/categorias/actualizar'.$categoria['id']) ?>" class="btn btn-sm btn-outline-primary">
+                                    <a href="<?= base_url('admin/categorias/actualizar/'.$categoria['id']) ?>" class="btn btn-sm btn-outline-primary">
                                         <i class="bi bi-pencil"></i>
                                     </a>
                                 </td>

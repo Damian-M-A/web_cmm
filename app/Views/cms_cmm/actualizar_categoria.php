@@ -22,7 +22,7 @@
                 </div>
                 
                 <div class="card-body p-4">
-                    <?= form_open('admin/categorias/actualizar'.$categoria['id']); ?>
+                    <?= form_open('admin/categorias/actualizar'.$categorias['id']); ?>
                         
                         <div class="mb-4">
                             <label for="nombre" class="form-label small fw-bold text-uppercase text-muted">Nombre de la Categoría</label>
@@ -30,7 +30,7 @@
                                    name="nombre" 
                                    id="nombre" 
                                    class="form-control form-control-lg border-2"
-                                   value="<?= $categoria['nombre'] ?>" 
+                                   value="<?= $categorias['nombre'] ?>" 
                                    required>
             
                         </div>
