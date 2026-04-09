@@ -1,7 +1,7 @@
 <?= view('cms_cmm/layout/header.php') ?>
 <main role="main">
     <div class="container mt-5">
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-2">
             <a class="btn btn-secondary shadow-sm" href="<?= base_url('admin/noticias') ?>">
                 <i class = "bi bi-skip-backward-fill"></i>Volver
             </a>
@@ -30,11 +30,9 @@
                                 <td style="text-align: center;"> <?= $categoria['id'] ?></td>
                                 <td style="text-align: justify;"> <?= $categoria['nombre']?></td>
                                 <td class="text-end pe-4">
-                                    <div class="d-flex justify-content-end align-items-center gap-2">
-                                        <a href="<?= base_url('') ?>" class="btn btn-sm btn-outline-primary">
-                                            <i class="bi bi-pencil"></i>
-                                        </a>
-                                    </div>
+                                    <a href="<?= base_url('') ?>" class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
                                 </td>
                             </tr>
                         </tbody>

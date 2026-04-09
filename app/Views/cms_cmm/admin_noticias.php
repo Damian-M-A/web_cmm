@@ -1,7 +1,7 @@
 <?= view('cms_cmm/layout/header.php') ?>
 <main role="main">
     <div class="container mt-5">
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-2">
             <a class="btn btn-secondary shadow-sm" href="<?= base_url('admin/dashboard') ?>">
                 <i class = "bi bi-skip-backward-fill"></i>Volver
             </a>
@@ -9,7 +9,7 @@
                 <i class="bi bi-plus-lg me-1"></i> Añadir nueva noticia
             </a>
             <a class="btn btn-info shadow-sm" href="<?=base_url('admin/categorias')?>">
-                <i class="bi bi-bookmark-fill"></i> Ver categorias
+                <i class="bi bi-bookmark-fill m-1"></i> Ver categorias
             </a>
 
         </div>

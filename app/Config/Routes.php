@@ -27,4 +27,5 @@ $routes->group('admin', ['filter' => 'group:admin'], static function ($routes) {
     $routes->post('noticias/guardar-cambios/(:num)', 'AdminNoticiasController::Update/$1');
     // categorias
     $routes->get('categorias', 'AdminCategoriasController::Index');
+    $routes->get('categorias/nueva-categoria', 'AdminCategoriasController::New');
 });

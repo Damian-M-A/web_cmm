@@ -15,5 +15,9 @@ class AdminCategoriasController extends BaseController
         $categorias = $this->categoriasModel->findAll();
         $data = ['title'=> 'Administrar categorias', 'categorias' => $categorias];
         return view('cms_cmm/admin_categorias', $data);
-    } 
+    }
+    public function new()
+    {
+        return view('cms_cmm/nueva_categoria');
+    }
 }
