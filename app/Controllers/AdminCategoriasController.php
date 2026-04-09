@@ -69,7 +69,7 @@ class AdminCategoriasController extends BaseController
         }
         $categoria = $this->request->getPost('nombre');
 
-        $this->categoriasModel->update($id,['categoria'=> $categoria]);
+        $this->categoriasModel->update($id,['nombre'=> $categoria]);
         return redirect()->to('admin/categorias');
         
 
