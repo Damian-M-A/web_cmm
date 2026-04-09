@@ -77,7 +77,7 @@
                                         <i class="bi bi-file-earmark-pdf me-1"></i> Documento Adjunto
                                     </label>
 
-                                    <?php if (!empty($noticia['adjunto'])): ?>
+                                    <?php if (!empty($noticias['adjunto'])): ?>
                                         <div class="mb-2 d-flex align-items-center p-2 bg-white rounded border">
                                             <i class="bi bi-file-pdf text-danger fs-4 me-2"></i>
                                             <a href="<?= base_url(['files', $noticias['adjunto']]) ?>" target="_blank" class="text-decoration-none small text-truncate">
@@ -94,10 +94,10 @@
                         </div>
 
                         <div class="d-flex justify-content-end gap-2 border-top pt-4">
-                            <a href="<?= base_url('admin/noticias') ?>" class="btn btn-outline-secondary px-4">
+                            <a href="<?= base_url('admin/noticias') ?>" class="btn btn-outline-danger px-4">
                                 <i class="bi bi-arrow-left me-1"></i> Volver
                             </a>
-                            <button type="submit" class="btn btn-primary px-4 fw-bold shadow-sm">
+                            <button type="submit" class="btn btn-success px-4 fw-bold shadow-sm">
                                 <i class="bi bi-save me-1"></i> Guardar Cambios
                             </button>
                         </div>

@@ -15,7 +15,7 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="card h-100 text-center shadow-sm border-0">
                         <img src="<?= base_url('img/web.webp')?>" class="card-img-top" alt="Sitio">
-                        <div class="card-body d-grid">
+                        <div class="card-body">
                             <a href="<?= base_url()?>" type="button" class="btn btn-outline-info btn-sm fw-bold">Ver Sitio</a>
                         </div>
                     </div>
@@ -24,7 +24,7 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="card h-100 text-center shadow-sm border-0">
                         <img src="<?= base_url('img/articulo.jpg')?>" class="card-img-top" alt="Artículos">
-                        <div class="card-body d-grid">
+                        <div class="card-body">
                             <a href="<?= base_url('admin/noticias') ?>" type="button" class="btn btn-outline-info btn-sm fw-bold">Ver Noticias</a>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="card h-100 text-center shadow-sm border-0">
                         <img src="<?= base_url('img/colaboradores.png')?>" class="card-img-top" alt="Colaboradores">
-                        <div class="card-body d-grid">
+                        <div class="card-body">
                             <button type="button" class="btn btn-outline-info btn-sm fw-bold">Ver Colaboradores</button>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="card h-100 text-center shadow-sm border-0">
                         <img src="<?= base_url('img/categorias.jpg')?>" class="card-img-top" alt="Categorías">
-                        <div class="card-body d-grid">
+                        <div class="card-body">
                             <button type="button" class="btn btn-outline-info btn-sm fw-bold">Ver Categorías</button>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="card h-100 text-center shadow-sm border-0">
                         <img src="<?= base_url('img/usuarios.webp')?>" class="card-img-top" alt="Usuarios">
-                        <div class="card-body d-grid">
+                        <div class="card-body">
                             <button type="button" class="btn btn-outline-info btn-sm fw-bold">Ver Usuarios</button>
                         </div>
                     </div>

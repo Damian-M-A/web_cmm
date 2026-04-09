@@ -76,7 +76,7 @@
                             <a href="<?= base_url('admin/noticias') ?>" class="btn btn-danger px-4">
                                 <i class="bi bi-x-lg me-1"></i> Cancelar
                             </a>
-                            <button type="submit" class="btn btn-primary px-4 fw-bold shadow-sm">
+                            <button type="submit" class="btn btn-success px-4 fw-bold shadow-sm">
                                 <i class="bi bi-check-lg me-1"></i> Publicar
                             </button>
                         </div>
