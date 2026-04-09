@@ -23,4 +23,5 @@ $routes->group('admin', ['filter' => 'group:admin'], static function ($routes) {
     $routes->post('noticias/guardar-noticia', 'AdminNoticiasController::Save');
     $routes->post('noticias/eliminar/(:num)', 'AdminNoticiasController::Delete/$1');
     $routes->get('noticias/actualizar-noticia/(:num)', 'AdminNoticiasController::Edit/$1');
+    $routes->post('noticias/guardar-cambios/(:num)', 'AdminNoticiasController::Update/$1');
 });

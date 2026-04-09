@@ -22,7 +22,7 @@
                 </div>
                 
                 <div class="card-body p-4">
-                    <?= form_open_multipart('admin/noticias/actualizar/' . $noticias['id']) ?>
+                    <?= form_open_multipart('admin/noticias/guardar-cambios/' . $noticias['id']) ?>
                         
                         <div class="row mb-2">
                             <label for="tipo_articulo" class="form-label small fw-bold text-uppercase text-muted">Tipo de Artículo</label>
