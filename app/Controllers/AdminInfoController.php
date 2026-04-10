@@ -38,4 +38,31 @@ class AdminInfoController extends BaseController
         $data = ['title' => 'Editando Informacion CMM', 'informacion' => $informacion];
         return view('cms_cmm/editar_info_cmm', $data);
     }
+    public function edit($id = null)
+    {
+        helper('form');
+
+        if ($id === null)
+        {
+            return redirect()->to('admin/info_cmm');
+
+        }
+        $reglas =
+        [
+            'texto' => 'required'
+        ];
+        if ($this->validate($reglas))
+        {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        
+        }
+        $data = $this->request->getPost();
+        $this->infoModel->update($id,
+            [
+                'texto' => $data
+            ]
+        );
+        return redirect()->to('admin/info-cmm');
+        
+    }
 }

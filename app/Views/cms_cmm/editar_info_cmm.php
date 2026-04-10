@@ -26,12 +26,8 @@
                             
                             <div class="mb-4">
                                 <label for="nombre" class="form-label small fw-bold text-uppercase text-muted">Contenido</label>
-                                <input type="textarea" 
-                                    name="texto" 
-                                    id="texto" 
-                                    class="form-control form-control-lg border-2"
-                                    value="<?= $informacion['texto'] ?>" 
-                                    required>
+                                <textarea class="form-control border-2" id="texto" name="texto" rows="8"><?= set_value('texto', $informacion['texto']) ?></textarea>
+                                <div class="text-danger small"><?= validation_show_error('texto') ?></div>
                                 
                             </div>
 
