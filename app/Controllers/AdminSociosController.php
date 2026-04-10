@@ -19,4 +19,9 @@ class AdminSociosController extends BaseController
         $data = ['title' => 'Administrar socios', 'socios' => $socios];
         return view('cms_cmm/admin_socios', $data);
     }
+    public function new()
+    {
+        $data = ['title' => 'Nuevo socio'];
+        return view ('cms_cmm/nuevo_socio',$data);
+    }
 }

@@ -49,7 +49,7 @@
                 </div>
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="card h-100 text-center shadow-sm border-0">
-                        <img src="<?= base_url('img/socios.png')?>" class="card-img-top" alt="Socios">
+                        <img src="<?= base_url('img/socios-28285184.webp')?>" class="card-img-top" alt="Socios">
                         <div class="card-body">
                             <a href="<?= base_url('admin/socios') ?>" type="button" class="btn btn-outline-info btn-sm fw-bold">Ver Partners</a>
                         </div>

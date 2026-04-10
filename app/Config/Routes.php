@@ -44,5 +44,6 @@ $routes->group('admin', ['filter' => 'group:admin'], static function ($routes) {
     $routes->post('info-cmm/actualizar/(:num)', 'AdminInfoController::Edit/$1');
     //socios
     $routes->get('socios', 'AdminSociosController::Index');
+    $routes->get('socios/nuevo-socio', 'AdminSociosController::new');
     
 });
