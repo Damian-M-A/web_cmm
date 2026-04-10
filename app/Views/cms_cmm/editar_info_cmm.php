@@ -22,7 +22,7 @@
                     </div>
                     
                     <div class="card-body p-4">
-                        <?= form_open('admin/info-cmm/actualizar'. $informacion['id']); ?>
+                        <?= form_open('admin/info-cmm/actualizar/'. $informacion['id']); ?>
                             
                             <div class="mb-4">
                                 <label for="nombre" class="form-label small fw-bold text-uppercase text-muted">Contenido</label>
