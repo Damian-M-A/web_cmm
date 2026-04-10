@@ -38,7 +38,7 @@
                                 <td style="text-align: justify;"> <?= $colaborador['equipo']?></td>
                                 <td class="text-end pe-4">
                                     <div class="d-flex justify-content-end align-items-center gap-2">
-                                        <a href="<?= base_url('') ?>" class="btn btn-sm btn-outline-primary">
+                                        <a href="<?= base_url('admin/colaboradores/editar-colaborador/' .$colaborador['id']) ?>" class="btn btn-sm btn-outline-primary">
                                             <i class="bi bi-pencil"></i>
                                         </a>
                                         <form action="<?= base_url('') ?>" method="POST" 

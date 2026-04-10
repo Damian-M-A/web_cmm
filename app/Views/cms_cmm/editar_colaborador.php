@@ -25,7 +25,7 @@
                             <select class="form-select border-2" id="cargos" name="cargos">
                                 <option selected disabled>Seleccionar...</option>
                                 <?php foreach ($cargos as $cargo): ?>
-                                    <option value="<?= $cargo['id'] ?>" <?= set_select('cargos', $cargo['id'], ($cargo['id'] == $colaborador['id_categoria'])) ?>>
+                                    <option value="<?= $cargo['id'] ?>" <?= set_select('cargos', $cargo['id'], ($cargo['id'] == $colaborador['id_cargo'])) ?>>
                                         <?= esc($cargo['nombre']) ?>
                                     </option>
                                 <?php endforeach; ?>
