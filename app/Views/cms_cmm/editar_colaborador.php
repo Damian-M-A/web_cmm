@@ -51,20 +51,20 @@
                         <div class="mb-3">
                             <label for="nombre" class="form-label small fw-bold text-uppercase text-muted">Nombre Colaborador</label>
                             <input type="text" class="form-control form-control-sm border-2" id="nombre" name="nombre" 
-                                   value="<?= set_value('nombre') ?>" maxlength="100" placeholder="Juanito Alcachofa">
+                                   value="<?= $colaborador['nombre']?>" maxlength="100" placeholder="Juanito Alcachofa">
                             <div class="text-danger small"><?= validation_show_error('nombre') ?></div>
                         </div>
                         <div class="mb-4">
                             <label for="profesion" class="form-label small fw-bold text-uppercase text-muted">Profesión</label>
                             <textarea class="form-control border-2" id="profesion" name="profesion" rows="8" 
-                                      placeholder="Escribe la profesión del colaborador aqui..."><?= set_value('profesion') ?></textarea>
+                                      placeholder="Escribe la profesión del colaborador aqui..."><?= $colaborador['profesion'] ?></textarea>
                             <div class="text-danger small"><?= validation_show_error('profesion') ?></div>
                         </div>
 
                         <div class="mb-4">
                             <label for="descripcion" class="form-label small fw-bold text-uppercase text-muted">Descripción</label>
                             <textarea class="form-control border-2" id="descripcion" name="descripcion" rows="8" 
-                                      placeholder="Escribe la descripción del colaborador aqui..."><?= set_value('descripcion') ?></textarea>
+                                      placeholder="Escribe la descripción del colaborador aqui..."><?= $colaborador['descripcion'] ?></textarea>
                             <div class="text-danger small"><?= validation_show_error('descripcion') ?></div>
                         </div>
 
@@ -87,7 +87,7 @@
                                     <div class="text-danger small"><?= validation_show_error('imagen') ?></div>
                                 </div>
                             </div>
-
+                        </div>
                         <div class="d-flex justify-content-end gap-2 border-top pt-4">
                             <a href="<?= base_url('admin/colaboradores') ?>" class="btn btn-danger px-4">
                                 <i class="bi bi-x-lg me-1"></i> Cancelar
