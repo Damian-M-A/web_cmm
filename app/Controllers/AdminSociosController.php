@@ -3,7 +3,7 @@ namespace App\Controllers;
 
 use App\Models\PartnerModel;
 
-class AdminInfoController extends BaseController
+class AdminSociosController extends BaseController
 {
     protected $sociosModel;
 
