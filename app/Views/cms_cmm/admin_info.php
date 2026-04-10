@@ -28,7 +28,7 @@
                                 <td style="text-align: center;"> <?= $info['tipo'] ?></td>
                                 <td style="text-align: justify;"> <?= word_limiter($info['texto'], 10)?></td>
                                 <td class="text-end pe-4">
-                                    <a href="<?= base_url('') ?>" class="btn btn-sm btn-outline-primary">
+                                    <a href="<?= base_url('admin/info-cmm/editar-informacion/' . $info['id']) ?>" class="btn btn-sm btn-outline-primary">
                                         <i class="bi bi-pencil"></i>
                                     </a>
                                 </td>
