@@ -28,7 +28,7 @@ class AdminSociosController extends BaseController
     {
         helper('form');
         $reglas = [
-            'nombre' => 'required|is_unique[categorias.nombre]',
+            'nombre' => 'required|is_unique[socios.nombre]',
             'imagen' => 'uploaded[imagen]|is_image[imagen]|max_size[imagen,2048]'
         ];
         if(!$this->validate($reglas))
@@ -47,7 +47,8 @@ class AdminSociosController extends BaseController
         (
           [
             'nombre'=> $data,
-            'imagen' => $nombre_imagen
+            'imagen' => $nombre_imagen,
+            'activo' =>true
           ]  
         );
         return redirect()->to('admin/socios');
