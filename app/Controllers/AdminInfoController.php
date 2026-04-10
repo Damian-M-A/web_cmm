@@ -51,12 +51,12 @@ class AdminInfoController extends BaseController
         [
             'texto' => 'required'
         ];
-        if ($this->validate($reglas))
+        if (!$this->validate($reglas))
         {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         
         }
-        $data = $this->request->getPost();
+        $data = $this->request->getPost('texto');
         $this->infoModel->update($id,
             [
                 'texto' => $data
