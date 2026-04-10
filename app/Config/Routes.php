@@ -45,5 +45,6 @@ $routes->group('admin', ['filter' => 'group:admin'], static function ($routes) {
     //socios
     $routes->get('socios', 'AdminSociosController::Index');
     $routes->get('socios/nuevo-socio', 'AdminSociosController::new');
+    $routes->post('socios/guardar-socio', 'AdminSociosController::Save');
     
 });

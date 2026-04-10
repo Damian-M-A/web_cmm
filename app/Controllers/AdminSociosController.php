@@ -24,4 +24,32 @@ class AdminSociosController extends BaseController
         $data = ['title' => 'Nuevo socio'];
         return view ('cms_cmm/nuevo_socio',$data);
     }
+    public function save ()
+    {
+        helper('form');
+        $reglas = [
+            'nombre' => 'required|is_unique[categorias.nombre]',
+            'imagen' => 'uploaded[imagen]|is_image[imagen]|max_size[imagen,2048]'
+        ];
+        if(!$this->validate($reglas))
+        {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        $data = $this->request->getPost('nombre');
+        $imagen = $this->request->getFile('imagen');
+        
+
+        if ($imagen && $imagen->isValid() && !$imagen->hasMoved()) {
+            $nombre_imagen = $imagen->getRandomName();
+            $imagen->move('img', $nombre_imagen);
+        }
+        $this->sociosModel->insert
+        (
+          [
+            'nombre'=> $data,
+            'imagen' => $nombre_imagen
+          ]  
+        );
+        return redirect()->to('admin/socios');
+    }
 }
