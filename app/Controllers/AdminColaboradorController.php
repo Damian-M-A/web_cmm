@@ -148,7 +148,7 @@ class AdminColaboradorController extends BaseController
             $fileImagen->move(FCPATH . 'img', $nombre_imagen);
             
     
-            $updateData['imagen'] = $nombre_imagen;
+            $data['imagen'] = $nombre_imagen;
         }
 
     
