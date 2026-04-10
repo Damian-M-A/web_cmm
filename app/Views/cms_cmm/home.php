@@ -29,20 +29,12 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="card h-100 text-center shadow-sm border-0">
                         <img src="<?= base_url('img/colaboradores.png')?>" class="card-img-top" alt="Colaboradores">
                         <div class="card-body">
-                            <button type="button" class="btn btn-outline-info btn-sm fw-bold">Ver Colaboradores</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="card h-100 text-center shadow-sm border-0">
-                        <img src="<?= base_url('img/categorias.jpg')?>" class="card-img-top" alt="Categorías">
-                        <div class="card-body">
-                            <button type="button" class="btn btn-outline-info btn-sm fw-bold">Ver Categorías</button>
+                            <a href="<?= base_url('admin/colaboradores') ?>" type="button" class="btn btn-outline-info btn-sm fw-bold">Ver Colaboradores</a>
                         </div>
                     </div>
                 </div>

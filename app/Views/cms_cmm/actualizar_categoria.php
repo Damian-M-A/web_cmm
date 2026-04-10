@@ -14,6 +14,13 @@
         <?php endif ?>
 
         <div class="row justify-content-center d-flex">
+            <div class="alert alert-warning border-0 shadow-sm mb-4 d-flex align-items-center p-3" role="alert">
+                <i class="bi bi-exclamation-triangle-fill fs-4 me-3 text-warning"></i>
+                    <div>
+                        <span class="fw-bold d-block">Aviso Importante</span>
+                        <span class="small text-dark">Por favor, informe al <strong>área de TI</strong> sobre las nuevas categorías creadas para su correcta implementación en la web pública.</span>
+                    </div>
+            </div>
             <div class="col-lg-8"> 
                 <div class="card shadow-sm border-0">
                     <div class="card-header bg-white py-3 border-bottom">

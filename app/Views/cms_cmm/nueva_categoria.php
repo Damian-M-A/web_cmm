@@ -12,7 +12,13 @@
                 </ul>
             </div>
         <?php endif ?>
-
+        <div class="alert alert-warning border-0 shadow-sm mb-4 d-flex align-items-center p-3" role="alert">
+            <i class="bi bi-exclamation-triangle-fill fs-4 me-3 text-warning"></i>
+            <div>
+                <span class="fw-bold d-block">Aviso Importante</span>
+                <span class="small text-dark">Por favor, informar sobre nuevas categorías creadas para su correcta implementación en la web.</span>
+            </div>
+        </div>
         <div class="row justify-content-center d-flex">
             <div class="col-lg-8"> 
                 <div class="card shadow-sm border-0">
