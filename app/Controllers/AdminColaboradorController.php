@@ -83,5 +83,19 @@ class AdminColaboradorController extends BaseController
 
 
     }
+    public function edit($id = null)
+    {
+        if($id === null)
+        {
+            return redirect()->to('admin/colaboradores');
+
+        }
+        $colaborador = $this->colaboradorModel->find($id);
+        $cargos = $this->cargoModel->findAll();
+        $equipo = $this->equipoModel->findAll();
+        
+        $data = ['title' => 'Editando colaborador', 'colaborador'=> $colaborador, 'cargos'=>$cargos, 'equipos'=> $equipo];
+        return view('cms_cmm/editar_colaborador', $data);
+    }
 
 }

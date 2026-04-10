@@ -35,5 +35,6 @@ $routes->group('admin', ['filter' => 'group:admin'], static function ($routes) {
     $routes->get('colaboradores', 'AdminColaboradorController::Index');
     $routes->get('colaboradores/nuevo-colaborador', 'AdminColaboradorController::New');
     $routes->post('colaboradores/guardar', 'AdminColaboradorController::Save');
+    $routes->get('colaboradores/editar-colaborador/(:num)', 'AdminColaboradorController::Edit/$1');
     
 });

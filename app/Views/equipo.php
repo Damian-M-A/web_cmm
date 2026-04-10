@@ -1,7 +1,8 @@
 <?php echo view('layout/header'); ?>
 
-<main role="main" class="container pt-5 mt-5">
-    <div class="row g-4 justify-content-center"> 
+<main role="main" class="container py-3">
+    <div class="container mt-3">
+            <div class="row g-4 justify-content-center"> 
         <?php foreach ($colaboradores as $colab): ?>
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="card-colaborador h-100"> <div class="card-glass-profile text-center p-4">
@@ -27,6 +28,8 @@
         <?php endforeach; ?>
         
     </div>
+    </div>
+
 </main>
 
 <?= view('layout/footer') ?>
