@@ -23,7 +23,7 @@
                     </div>
                     
                     <div class="card-body p-4">
-                        <?= form_open('socios/guardar-socio'); ?>
+                        <?= form_open('admin/socios/guardar-socio'); ?>
                             
                             <div class="mb-4">
                                 <label for="nombre" class="form-label small fw-bold text-uppercase text-muted">Nombre</label>

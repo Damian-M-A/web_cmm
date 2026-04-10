@@ -52,4 +52,15 @@ class AdminSociosController extends BaseController
         );
         return redirect()->to('admin/socios');
     }
+    public function delete($id = null)
+    {
+        if($id === null)
+        {
+            return redirect()->to('admin/socios');
+        }
+        if($this->sociosModel->delete($id))
+        {
+            return redirect()->to('admin/socios');
+        }
+    }
 }

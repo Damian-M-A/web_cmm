@@ -16,7 +16,7 @@ class Home extends BaseController
     public function index()
     {
         helper('text');
-        $noticias = $this->noticiasModel->orderBy('id','DESC')->findAll(3);
+        $noticias = $this->noticiasModel->where('id_categoria',1)->orderBy('id','DESC')->findAll(3);
         $partners = $this->partnerModel->findAll();
         $data = ['title'=> 'Centro Mario Molina - Investigación & Desarrollo', 'noticias' => $noticias, 'partners' => $partners];
         return view('main',$data);
