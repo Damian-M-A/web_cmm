@@ -4,6 +4,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    # --- SECCIÓN DE VOLÚMENES AÑADIDA ---
+    volumes:
+      - cmmolina_img:/var/www/public/img
+      - cmmolina_writable:/var/www/writable
+    # ------------------------------------
     networks:
       - coolify
     labels:
@@ -13,6 +18,13 @@ services:
       - "traefik.http.routers.${COOLIFY_RESOURCE_UUID}.tls=true"
       - "traefik.http.routers.${COOLIFY_RESOURCE_UUID}.tls.certresolver=letsencrypt"
       - "traefik.http.services.${COOLIFY_RESOURCE_UUID}.loadbalancer.server.port=80"
+
+# --- DEFINICIÓN DE VOLÚMENES ---
+volumes:
+  cmmolina_img:
+    name: cmmolina_img
+  cmmolina_writable:
+    name: cmmolina_writable
 
 networks:
   coolify:
