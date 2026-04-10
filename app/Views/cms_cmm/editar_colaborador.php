@@ -18,7 +18,7 @@
                 </div>
                 
                 <div class="card-body p-4">
-                    <?= form_open_multipart('admin/colaboradores/guardar-cambios') ?>
+                    <?= form_open_multipart('admin/colaboradores/actualizar-colaborador') ?>
                         
                         <div class="row mb-2">
                             <label for="cargos" class="form-label small fw-bold text-uppercase text-muted">Cargos</label>

@@ -41,7 +41,7 @@
                                         <a href="<?= base_url('admin/colaboradores/editar-colaborador/' .$colaborador['id']) ?>" class="btn btn-sm btn-outline-primary">
                                             <i class="bi bi-pencil"></i>
                                         </a>
-                                        <form action="<?= base_url('') ?>" method="POST" 
+                                        <form action="<?= base_url('admin/colaboradores/eliminar-colaborador/'.$colaborador['id']) ?>" method="POST" 
                                             onsubmit="return confirm('¿Estás seguro de eliminar este colaborador?')" class="m-0">
                                             <button type="submit" class="btn btn-sm btn-danger">
                                                 <i class="bi bi-trash"></i>

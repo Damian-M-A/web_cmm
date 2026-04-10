@@ -90,12 +90,90 @@ class AdminColaboradorController extends BaseController
             return redirect()->to('admin/colaboradores');
 
         }
+
         $colaborador = $this->colaboradorModel->find($id);
+        if (!$colaborador) 
+        {
+        return redirect()->to('admin/colaboradores');
+        }
         $cargos = $this->cargoModel->findAll();
         $equipo = $this->equipoModel->findAll();
         
         $data = ['title' => 'Editando colaborador', 'colaborador'=> $colaborador, 'cargos'=>$cargos, 'equipos'=> $equipo];
         return view('cms_cmm/editar_colaborador', $data);
+    }
+    public function update($id = null)
+    {
+        helper(['form', 'url']);
+
+        if ($id === null) {
+            return redirect()->to('admin/colaboradores');
+        }
+
+        $colaborador = $this->colaboradorModel->find($id);
+        if (!$colaborador) {
+            return redirect()->to('admin/colaboradores');
+        }
+
+        $reglas = [
+            'equipos'     => 'required|is_not_unique[equipos.id]',
+            'nombre'      => "required|is_unique[colaboradores.nombre,id,{$id}]", 
+            'profesion'   => 'required',
+            'descripcion' => 'required',
+            'imagen'      => 'permit_empty|is_image[imagen]|max_size[imagen,2048]',
+        ];
+
+        if (!$this->validate($reglas)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        
+        $data = [
+            'nombre'      => $this->request->getPost('nombre'),
+            'id_equipo'   => $this->request->getPost('equipos'),
+            'id_cargo'    => $this->request->getPost('cargos'),
+            'profesion'   => $this->request->getPost('profesion'),
+            'descripcion' => $this->request->getPost('descripcion'),
+        ];
+
+        $fileImagen = $this->request->getFile('imagen');
+        if ($fileImagen && $fileImagen->isValid() && !$fileImagen->hasMoved()) {
+            
+            
+            if (!empty($colaborador['imagen']) && file_exists(FCPATH . 'img' . $colaborador['imagen'])) {
+                unlink(FCPATH . 'img' . $colaborador['imagen']);
+            }
+            
+            $nombre_imagen = $fileImagen->getRandomName();
+            $fileImagen->move(FCPATH . 'img', $nombre_imagen);
+            
+    
+            $updateData['imagen'] = $nombre_imagen;
+        }
+
+    
+        if ($this->colaboradorModel->update($id, $data)) {
+            return redirect()->to('admin/colaboradores');
+        } else {
+            return redirect()->back()->withInput()->with('error', 'Ocurrió un error al actualizar');
+        }
+    }
+    public function delete($id = null)
+    {
+        if($id === null)
+        {
+            return redirect()->to('admin/colaboradores');
+        }
+        $colaborador = $this->colaboradorModel->find($id);
+        if(!$colaborador)
+        {
+            return redirect()->to('admin/colaboradores');
+
+        }
+        if($this->colaboradorModel->delete($id))
+        {
+            return redirect()->to('admin/colaboradores');
+        }
     }
 
 }
