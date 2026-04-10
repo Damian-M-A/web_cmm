@@ -28,7 +28,7 @@ class AdminSociosController extends BaseController
     {
         helper('form');
         $reglas = [
-            'nombre' => 'required|is_unique[socios.nombre]',
+            'nombre' => 'required',
             'imagen' => 'uploaded[imagen]|is_image[imagen]|max_size[imagen,2048]'
         ];
         if(!$this->validate($reglas))
