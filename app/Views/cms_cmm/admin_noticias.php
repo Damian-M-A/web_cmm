@@ -1,6 +1,7 @@
 <?= view('cms_cmm/layout/header.php') ?>
 <main role="main">
-    <div class="container mt-5">
+    <div class="container py-5">
+            <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-2">
             <a class="btn btn-secondary shadow-sm" href="<?= base_url('admin/dashboard') ?>">
                 <i class = "bi bi-skip-backward-fill"></i> Volver
@@ -64,6 +65,8 @@
                 </div>
             </div>
         </div>
+    </div>
+
     </div>
 </main>
 

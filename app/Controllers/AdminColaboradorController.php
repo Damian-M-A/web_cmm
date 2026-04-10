@@ -42,5 +42,46 @@ class AdminColaboradorController extends BaseController
         $data = ['title' => 'Añadir nuevo colaborador', 'cargos' => $cargos, 'equipos' => $equipo];
         return view('cms_cmm/nuevo_colaborador', $data);
     }
+    public function save()
+    {
+        helper('form');
+        $reglas = 
+        [
+            'cargos' => 'required|is_not_unique[cargos.id]',
+            'equipos'=> 'required|is_not_unique[equipos.id]',
+            'nombre' => 'required|is_unique[colaboradores.nombre]',
+            'profesion' => 'required',
+            'descripcion' => 'required',
+            'imagen' => 'uploaded[imagen]|is_image[imagen]|max_size[imagen,2048]'
+
+        ];
+        if(!$this->validate($reglas))
+        {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        $imagen = $this->request->getFile('imagen');
+        $data = $this->request->getPost();
+
+        if ($imagen && $imagen->isValid() && !$imagen->hasMoved()) {
+            $nombre_imagen = $imagen->getRandomName();
+            $imagen->move('img', $nombre_imagen);
+        }
+
+        $this->colaboradorModel->insert(
+            [
+                'nombre' => $data['nombre'],
+                'id_cargo' => $data['cargos'],
+                'id_equipo' => $data['equipos'],
+                'profesion' => $data['profesion'],
+                'descripcion' => $data['descripcion'],
+                'imagen' => $nombre_imagen,
+                'activo' => true
+            ]
+        );
+        return redirect()->to('admin/colaboradores');
+
+
+
+    }
 
 }
