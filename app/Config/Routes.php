@@ -40,5 +40,6 @@ $routes->group('admin', ['filter' => 'group:admin'], static function ($routes) {
     $routes->post('colaboradores/eliminar-colaborador/(:num)', 'AdminColaboradorController::Delete/$1');
     // info-cmm
     $routes->get('info-cmm', 'AdminInfoController::Index');
+    $routes->get('info-cmm/editar-informacion/(:num)', 'AdminInfoController::View/$1');
     
 });

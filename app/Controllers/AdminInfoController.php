@@ -23,4 +23,19 @@ class AdminInfoController extends BaseController
         $data = ['title' => 'Administrar noticias', 'informacion' =>$info_cmm];
         return view('cms_cmm/admin_info', $data);
     }
+    public function view($id = null)
+    {
+        if ($id === null)
+        {
+            return redirect()->to('admin/info_cmm');
+
+        }
+        $informacion = $this->infoModel->find($id);
+        if (!$informacion)
+        {
+            return redirect()->to('admin/info_cmm');
+        }
+        $data = ['title' => 'Editando Informacion CMM', 'informacion' => $informacion];
+        return view('editar_info_cmm', $data);
+    }
 }
