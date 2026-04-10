@@ -36,6 +36,6 @@ class AdminInfoController extends BaseController
             return redirect()->to('admin/info_cmm');
         }
         $data = ['title' => 'Editando Informacion CMM', 'informacion' => $informacion];
-        return view('editar_info_cmm', $data);
+        return view('cms_cmm/editar_info_cmm', $data);
     }
 }
