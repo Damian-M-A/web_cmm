@@ -18,7 +18,7 @@
                 <i class="bi bi-exclamation-triangle-fill fs-4 me-3 text-warning"></i>
                     <div>
                         <span class="fw-bold d-block">Aviso Importante</span>
-                        <span class="small text-dark">Por favor, informe al <strong>área de TI</strong> sobre las nuevas categorías creadas para su correcta implementación en la web pública.</span>
+                        <span class="small text-dark">Por favor, informar sobre nuevas categorías creadas para su correcta implementación en la web.</span>
                     </div>
             </div>
             <div class="col-lg-8"> 

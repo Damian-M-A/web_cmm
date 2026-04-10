@@ -5,7 +5,7 @@
             <a class="btn btn-secondary shadow-sm" href="<?= base_url('admin/dashboard') ?>">
                 <i class = "bi bi-skip-backward-fill"></i> Volver
             </a>
-            <a class="btn btn-primary shadow-sm" href="<?=base_url('')?>">
+            <a class="btn btn-primary shadow-sm" href="<?=base_url('admin/colaboradores/nuevo-colaborador')?>">
                 <i class="bi bi-plus-lg me-1"></i> Añadir nuevo colaborador
             </a>
         </div>
@@ -31,8 +31,8 @@
                             
                             <tr>
                                 <td style="text-align: left;"> <?= $colaborador['nombre'] ?></td>
-                                <td style="text-align: justify;"> <?= $colaborador['profesion']?></td>
-                                <td style="text-align: justify;"> <?= $colaborador['descripcion']?></td>
+                                <td style="text-align: justify;"> <?= word_limiter($colaborador['profesion'], 10)?></td>
+                                <td style="text-align: justify;"> <?= word_limiter($colaborador['descripcion'], 10)?></td>
                                 <td style="text-align: justify;"> <?= $colaborador['cargo']?></td>
                                 <td style="text-align: justify;"> <?= $colaborador['equipo']?></td>
                                 <td class="text-end pe-4">

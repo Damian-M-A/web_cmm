@@ -33,6 +33,6 @@ $routes->group('admin', ['filter' => 'group:admin'], static function ($routes) {
     $routes->post('categorias/actualizar-categoria/(:num)', 'AdminCategoriasController::Update/$1');
     // colaboradores
     $routes->get('colaboradores', 'AdminColaboradorController::Index');
-    
+    $routes->get('colaboradores/nuevo-colaborador', 'AdminColaboradorController::New');
     
 });
