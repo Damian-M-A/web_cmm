@@ -23,7 +23,7 @@
                     </div>
                     
                     <div class="card-body p-4">
-                        <?= form_open_multipart('admin/socios/guardar-socio'); ?>
+                        <?= form_open_multipart('admin/socios/actualizar-socio/' .$socio['id']); ?>
                             
                             <div class="mb-4">
                                 <label for="nombre" class="form-label small fw-bold text-uppercase text-muted">Nombre</label>
@@ -31,21 +31,31 @@
                                     name="nombre" 
                                     id="nombre" 
                                     class="form-control form-control-lg border-2"
-                                    value="<?= set_value('nombre') ?>" 
+                                    value="<?= set_value('nombre', $socio['nombre']) ?>" 
                                     required>
                                 
                             </div>
                         
-                            <div class="md-4">
-                                <div class="p-3 bg-light rounded-3 border">
-                                    <label for="imagen" class="form-label small fw-bold text-uppercase text-muted">
-                                        <i class="bi bi-image me-1"></i> Imagen Colaborador
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <div class="p-3 bg-light rounded-3 border h-100">
+                                    <label class="form-label small fw-bold text-uppercase text-muted">
+                                        <i class="bi bi-image me-1"></i> Imagen Principal
                                     </label>
-                                    <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
-                                    <div class="form-text text-xs text-muted">JPG, PNG o JPEG (Máx. 2MB)</div>
+                                    
+                                    <?php if (!empty($socio['imagen'])): ?>
+                                        <div class="mb-2 position-relative">
+                                            <img src="<?= base_url(['img', $socio['imagen']]) ?>" alt="Actual" class="img-thumbnail shadow-sm" style="max-height: 100px;">
+                                            <div class="small text-muted mt-1 italic">Imagen actual</div>
+                                        </div>
+                                    <?php endif; ?>
+
+                                    <input type="file" class="form-control form-control-sm" id="imagen" name="imagen" accept="image/*">
+                                    <div class="form-text text-xs text-muted">Subir nueva para cambiar (Máx. 2MB)</div>
                                     <div class="text-danger small"><?= validation_show_error('imagen') ?></div>
                                 </div>
                             </div>
+                        </div>
                         
 
                             <div class="d-flex justify-content-end gap-2 border-top pt-4">

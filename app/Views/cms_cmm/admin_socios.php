@@ -31,10 +31,10 @@
                                 <td style="text-align: justify;"> <?= $socio['nombre']?></td>
                                 <td class="text-end pe-4">
                                     <div class="d-flex justify-content-end align-items-center gap-2">
-                                        <a href="<?= base_url() ?>" class="btn btn-sm btn-outline-primary">
+                                        <a href="<?= base_url('admin/socios/editar-socio/' .$socio['id']) ?>" class="btn btn-sm btn-outline-primary">
                                             <i class="bi bi-pencil"></i>
                                         </a>
-                                        <form action="<?= base_url() ?>" method="POST" 
+                                        <form action="<?= base_url('admin/socios/eliminar-socio/' .$socio['id']) ?>" method="POST" 
                                             onsubmit="return confirm('¿Estás seguro de eliminar este socio?')" class="m-0">
                                             <button type="submit" class="btn btn-sm btn-danger">
                                                 <i class="bi bi-trash"></i>
