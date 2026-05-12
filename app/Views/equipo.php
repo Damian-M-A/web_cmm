@@ -22,6 +22,16 @@
                             <p class="text-muted small px-2">
                                 <?= word_limiter($colab['descripcion'],20)?>
                             </p>
+                            <button type="button" 
+                                class="btn btn-sm btn-outline-primary btn-ver-perfil" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#modalColaborador"
+                                data-nombre="<?= $colab['nombre'] ?>"
+                                data-cargo="<?= $colab['cargo'] ?? 'Colaborador' ?>"
+                                data-descripcion="<?= $colab['descripcion'] ?>"
+                                data-imagen="<?= base_url(['img', $colab['imagen']]) ?>">
+                                Ver Mas
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -31,5 +41,37 @@
     </div>
 
 </main>
+<div class="modal fade" id="modalColaborador" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="m-nombre">Nombre del Colaborador</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="m-imagen" src="" class="rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #eee;">
+                <h6 id="m-cargo" class="text-primary fw-bold">Cargo</h6>
+                <hr>
+                <p id="m-descripcion" class="text-muted"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const modalColab = document.getElementById('modalColaborador');
+    modalColab.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        const nombre = button.getAttribute('data-nombre');
+        const cargo = button.getAttribute('data-cargo');
+        const descripcion = button.getAttribute('data-descripcion');
+        const imagen = button.getAttribute('data-imagen');
+        modalColab.querySelector('#m-nombre').textContent = nombre;
+        modalColab.querySelector('#m-cargo').textContent = cargo;
+        modalColab.querySelector('#m-descripcion').textContent = descripcion;
+        modalColab.querySelector('#m-imagen').src = imagen;
+    });
+});
+</script>
 
 <?= view('layout/footer') ?>
